@@ -27,47 +27,20 @@ class FilamentShadcnThemeServiceProvider extends ServiceProvider
                     /* Bright colors: Have doubled shades (50=500, 100=600, 200=700), stay same when swapped */
 
                     .dark {
-                        /* Swap button shades in dark mode */
+                        /* Swap button shades in dark mode - ONLY for primary and gray (Default theme) */
+                        /* Accent colors (danger, success, warning, info) stay the same */
                         --primary-500: var(--primary-50);
                         --primary-600: var(--primary-100);
                         --primary-700: var(--primary-200);
-
-                        --danger-500: var(--danger-50);
-                        --danger-600: var(--danger-100);
-                        --danger-700: var(--danger-200);
-
-                        --success-500: var(--success-50);
-                        --success-600: var(--success-100);
-                        --success-700: var(--success-200);
-
-                        --warning-500: var(--warning-50);
-                        --warning-600: var(--warning-100);
-                        --warning-700: var(--warning-200);
-
-                        --info-500: var(--info-50);
-                        --info-600: var(--info-100);
-                        --info-700: var(--info-200);
 
                         --gray-500: var(--gray-50);
                         --gray-600: var(--gray-100);
                         --gray-700: var(--gray-200);
                     }
 
-                    /* Fix button text color in dark mode */
+                    /* Fix button text color in dark mode - ONLY for primary and gray */
                     .dark .fi-btn.fi-color-primary {
                         --primary-50: var(--primary-950);
-                    }
-                    .dark .fi-btn.fi-color-danger {
-                        --danger-50: var(--danger-950);
-                    }
-                    .dark .fi-btn.fi-color-success {
-                        --success-50: var(--success-950);
-                    }
-                    .dark .fi-btn.fi-color-warning {
-                        --warning-50: var(--warning-950);
-                    }
-                    .dark .fi-btn.fi-color-info {
-                        --info-50: var(--info-950);
                     }
                     .dark .fi-btn.fi-color-gray {
                         --gray-50: var(--gray-950);
@@ -123,19 +96,6 @@ class FilamentShadcnThemeServiceProvider extends ServiceProvider
                         background-color: var(--gray-800) !important;
                     }
 
-                    /* For accent colors, override with the actual color */
-                    .dark .fi-toggle.fi-toggle-on.fi-color-danger {
-                        background-color: var(--danger-600) !important;
-                    }
-                    .dark .fi-toggle.fi-toggle-on.fi-color-success {
-                        background-color: var(--success-600) !important;
-                    }
-                    .dark .fi-toggle.fi-toggle-on.fi-color-warning {
-                        background-color: var(--warning-600) !important;
-                    }
-                    .dark .fi-toggle.fi-toggle-on.fi-color-info {
-                        background-color: var(--info-600) !important;
-                    }
 
                     /* OFF state: use same dark gray as ON state for consistency */
                     .dark .fi-toggle.fi-toggle-off {
@@ -153,21 +113,9 @@ class FilamentShadcnThemeServiceProvider extends ServiceProvider
                         border-radius: 9999px !important;
                     }
 
-                    /* Hover effects in dark mode - use shade 200 for visible contrast */
+                    /* Hover effects in dark mode - ONLY for primary and gray */
                     .dark .fi-btn.fi-color-primary:not(:disabled):hover {
                         background-color: var(--primary-200) !important;
-                    }
-                    .dark .fi-btn.fi-color-danger:not(:disabled):hover {
-                        background-color: var(--danger-200) !important;
-                    }
-                    .dark .fi-btn.fi-color-success:not(:disabled):hover {
-                        background-color: var(--success-200) !important;
-                    }
-                    .dark .fi-btn.fi-color-warning:not(:disabled):hover {
-                        background-color: var(--warning-200) !important;
-                    }
-                    .dark .fi-btn.fi-color-info:not(:disabled):hover {
-                        background-color: var(--info-200) !important;
                     }
                     .dark .fi-btn.fi-color-gray:not(:disabled):hover {
                         background-color: var(--gray-200) !important;
